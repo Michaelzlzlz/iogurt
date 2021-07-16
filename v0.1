@@ -16,17 +16,17 @@ void setup(void){
 }
  
 float t1;
-float temperature() { // Измеряем температуру 3 секунды
-   digitalWrite(term_power, HIGH); // Вкл. питание датчика температуры
-    delay(100); // Задержка перед первым измерением 
-    sensors.requestTemperatures();// Запрос на измерение температуры 
+float temperature() { /*Измеряем температуру 3 секунды*/
+   digitalWrite(term_power, HIGH); /*Вкл. питание датчика температуры*/
+    delay(100); /*Задержка перед первым измерением*/
+    sensors.requestTemperatures();/*Запрос на измерение температуры*/
   /*(1-й ошибочный)*/
-    delay(500); // Задержка перед повторным измерением
-    sensors.requestTemperatures();// Запрос на измерение температуры 
-    float t = float(sensors.getTempCByIndex(0));// значение температуры
-    digitalWrite(term_power, LOW); // Откл. питание датчика температуры
-    delay(3000); // Чтобы датчик не сломался от частых измерений
-    return(t); // Возвращаем значение температуры 
+    delay(500); /*Задержка перед повторным измерением*/
+    sensors.requestTemperatures();/*Запрос на измерение температуры */
+    float t = float(sensors.getTempCByIndex(0));/*значение температуры*/
+    digitalWrite(term_power, LOW); /*Откл. питание датчика температуры*/
+    delay(3000); /*Чтобы датчик не сломался от частых измерений*/
+    return(t); /*Возвращаем значение температуры*/
 }
  
   void loop(void){ 
